@@ -1,0 +1,37 @@
+# تجاهل المجلد الذي يحتوي على الملفات المبنية (build files)
+public/
+
+# تجاهل مجلدات العمل والمخرجات
+.cache/
+tmp/
+logs/
+
+# تجاهل ملفات النظام والبيئة
+.DS_Store          # ملفات نظام macOS
+Thumbs.db          # ملفات نظام Windows
+*.swp              # ملفات المؤقتة الخاصة بـ Vim
+.idea/             # إعدادات IDE مثل IntelliJ أو PhpStorm
+.vscode/           # إعدادات VS Code
+*.bak              # ملفات النسخ الاحتياطية
+
+# تجاهل ملفات Python الافتراضية (إن كنت تستخدمها)
+__pycache__/
+*.py[cod]
+
+# تجاهل إعدادات npm أو Node.js (إن كنت تستخدم أدوات تعتمد عليها)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# تجاهل الملفات المبدئية والمجلدات المؤقتة
+*.log
+*.tmp
+*.lock
+*.env              # ملفات البيئة السرية
+
+# تجاهل المجلدات المصدرية إذا كنت تريد رفع الناتج فقط
+content/
+themes/
+static/
+sass/
+templates/
