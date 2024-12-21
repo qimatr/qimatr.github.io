@@ -20,7 +20,7 @@ anchors = "safe"
 
 [extra]
 # الصورة المعروضة عند مشاركة الموقع
- ogimage = "/qimtar.png"
+ ogimage = "qimtar.png"
 
 # إعدادات SEO
  seo = true
