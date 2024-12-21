@@ -1,4 +1,4 @@
-base_url = "https://github.com/MohammedLanius/Qimtar.github.io"
+base_url = "https://qimatr.github.io"
 title = "القِمَطْرُ"
 
 default_language = "ar"
@@ -18,7 +18,7 @@ taxonomies = "safe"
 anchors = "safe"
 
 
-
+[extra]
 # الصورة المعروضة عند مشاركة الموقع
  ogimage = "/qimtar.png"
 
