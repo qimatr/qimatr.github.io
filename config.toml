@@ -1,6 +1,6 @@
 base_url = "https://qimatr.github.io"
 title = "القِمَطْرُ"
-
+description="لَيْسَ بِعِلْمٍ مَا يَعِي الْقِمَطْرُ ... مَا الْعِلْمُ إِلَّا مَا وَعَاهُ الصَّدْرُ"
 default_language = "ar"
 compile_sass = true
 generate_feeds = true
