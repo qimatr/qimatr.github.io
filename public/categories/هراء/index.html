@@ -77,7 +77,13 @@
               content="https://qimatr.github.io/qimtar.png">
         
         
-        </head>
+        
+<!-- Twitter Card meta tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="القِمَطْرُ">
+<meta name="twitter:description" content="لَيْسَ بِعِلْمٍ مَا يَعِي الْقِمَطْرُ ... مَا الْعِلْمُ إِلَّا مَا وَعَاهُ الصَّدْرُ"><meta name="twitter:image" content="https://qimatr.github.io/qimtar.png"><meta name="twitter:creator" content="@sei9inomikata"> <!-- اختياري -->
+
+    </head>
   
   
   <body>
@@ -159,27 +165,6 @@
     </main>
     
     
-    <script>
-      async function search(query) {
-        const response = await fetch('/search.json');
-        const data = await response.json();
-        const results = data.filter(page =>
-          page.title.toLowerCase().includes(query.toLowerCase()) ||
-          page.content.toLowerCase().includes(query.toLowerCase())
-        );
-        displayResults(results);
-      }
-    
-      function displayResults(results) {
-        const resultsContainer = document.getElementById('search-results');
-        resultsContainer.innerHTML = results.map(result => `
-          <div>
-            <h3><a href="${result.url}">${result.title}</a></h3>
-            <p>${result.summary}</p>
-          </div>
-        `).join('');
-      }
-    </script>
-    
+   
   </body>
 </html>
