@@ -1,6 +1,6 @@
-base_url = "https://qimatr.github.io"
+base_url = "https://github.com/MohammedLanius/Qimtar.github.io"
 title = "القِمَطْرُ"
-description="لَيْسَ بِعِلْمٍ مَا يَعِي الْقِمَطْرُ ... مَا الْعِلْمُ إِلَّا مَا وَعَاهُ الصَّدْرُ"
+
 default_language = "ar"
 compile_sass = true
 generate_feeds = true
@@ -17,13 +17,14 @@ paths = "safe"
 taxonomies = "safe"
 anchors = "safe"
 
-
 [extra]
+year_template = "year.html"
+
 # الصورة المعروضة عند مشاركة الموقع
- ogimage = "qimtar.png"
+# ogimage = " "
 
 # إعدادات SEO
- seo = true
+# seo = true
 # google_search_console = " "
 
 # إظهار أزرار القفز للIndiewebring
@@ -33,7 +34,7 @@ indiewebring = false
 # mastodon = "https://o3o.ca/@tinikov"
 
 # يُطلب اسم المستخدم فقط
- github = "MohammedLanius"
+# github = "tinikov"
 
 # إظهار تاريخ التأسيس في التذييل
 establishdate = "2024"

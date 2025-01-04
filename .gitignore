@@ -1,4 +1,4 @@
-ppublic/
+
 # تجاهل مجلدات العمل والمخرجات
 .cache/
 tmp/
@@ -27,9 +27,5 @@ yarn-error.log
 *.lock
 *.env              # ملفات البيئة السرية
 
-# تجاهل المجلدات المصدرية إذا كنت تريد رفع الناتج فقط
-content/
-themes/
-static/
-sass/
-templates/
+
+

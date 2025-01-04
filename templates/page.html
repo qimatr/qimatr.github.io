@@ -1,0 +1,113 @@
+{% extends "index.html" %}
+{# تغيير بيانات الصفحة #}
+{% block title %}
+  {{ page.title }} · {{ config.title }}
+{% endblock title %}
+{% block description %}
+  {{ page.description | default(value=config.description) }}
+{% endblock description %}
+{% block ogtitle %}
+  {{ page.title }}
+{% endblock ogtitle %}
+{% block ogdesc %}
+  {{ page.description }}
+{% endblock ogdesc %}
+{% block ogurl %}
+  {{ page.permalink | safe }}
+{% endblock ogurl %}
+{% block ogimage -%}
+  {%- if page.extra.image -%}{{ get_url(path=page.extra.image) | safe }}
+  {%- elif config.extra.ogimage -%}{{ get_url(path=config.extra.ogimage) | safe }}
+  {%- else -%}{{ get_url(path="android-chrome-512x512.png") | safe }}
+  {%- endif -%}
+{%- endblock ogimage %}
+{% block content %}
+  {# عنوان الصفحة #}
+  <h1 class="page-title">
+    <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+  </h1>
+  {# معلومات الصفحة #}
+  <div class="page-front">
+    <div class="page-front-description">{{ page.description }}</div>
+    <hr class="page-divider" />
+    {# التواريخ والمؤلفين #}
+    {% if page.date or page.updated %}
+      <div class="page-front-date">
+        {% if page.date %}
+          {%- if page.authors and page.authors | length > 0 -%}
+            نشرها 
+            {% for author in page.authors %}
+              {{ author }}
+              {%- if not loop.last %} و{% endif %}
+            {% endfor %}
+              في &nbsp;
+          {%- else -%}
+           نُشرت في&nbsp;
+          {%- endif -%}
+          <time datetime="{{ page.date | date(format=" %+") }}">{{ page.date | date(format="%Y/%m/%d") }}</time>
+        {%- endif -%}
+        {% if page.updated %}
+          <span class="re137-aquo"> - </span>آخر تعديل 
+          <time datetime="{{ page.updated | date(format=" %+") }}">{{ page.updated | date(format="%Y/%m/%d") }}</time>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    <div>
+      {% set dot_gen = false %}
+      {# الفئات (Categories) #}
+      {% if page.taxonomies.categories %}
+        {% if dot_gen %}<span class="page-front-dot">&middot;</span>{% endif %}
+        {% set dot_gen = true %}
+        <span class="page-front-aux"></span>
+        {% for cat in page.taxonomies.categories %}
+          <a href="{{ get_taxonomy_url(kind="categories", name=cat) | safe }}">{{ cat }}</a>
+        {% endfor %}
+      {%- endif -%}
+      {# جدول المحتويات #}
+      {% if page.extra.toc_gen %}
+        {% if dot_gen %}<span class="page-front-dot">&middot;</span>{% endif %}
+        <span class="page-front-aux">هنا يوجد</span>
+        <label for="toc-toggle" class="toc-button">جدول المحتويات</label>
+        <input type="checkbox" id="toc-toggle">
+        <nav id="page-front-toc">
+          {% if page.toc %}
+            <ul>
+              {% for h1 in page.toc %}
+                <li>
+                  <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+                  {% if h1.children %}
+                    <ul>
+                      {% for h2 in h1.children %}
+                        <li>
+                          <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </nav>
+      {% endif %}
+    </div>
+  </div>
+  {# المحتوى الرئيسي #}
+  <article>{{ page.content | safe }}</article>
+  {# تذييل الصفحة #}
+  {%- if page.higher or page.lower -%}
+    <div class="page-foot">
+      <hr class="page-divider" />
+      {% if page.higher -%}
+        <div>
+          المقالة السابقة: <a rel="prev" href="{{ page.higher.permalink | safe }}">{{ page.higher.title }}</a>
+        </div>
+      {%- endif %}
+      {% if page.lower -%}
+        <div>
+          المقالة التالية: <a rel="next" href="{{ page.lower.permalink | safe }}">{{ page.lower.title }}</a>
+        </div>
+      {%- endif %}
+    </div>
+  {%- endif -%}
+{% endblock content %}
