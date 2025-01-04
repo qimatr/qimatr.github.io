@@ -1,0 +1,56 @@
+base_url = "https://github.com/MohammedLanius/Qimtar.github.io"
+title = "القِمَطْرُ"
+
+default_language = "ar"
+compile_sass = true
+generate_feeds = true
+feed_filenames = ["rss.xml"]
+author = "محمد"
+# إذا تم استخدامه كقالب، يرجى إلغاء تعليق هذا الخيار
+# theme = "Re137"
+
+# لتفعيل صفحة التصنيفات
+ taxonomies = [{ name = "categories" }]
+
+[slugify]
+paths = "safe"
+taxonomies = "safe"
+anchors = "safe"
+
+[extra]
+year_template = "year.html"
+
+# الصورة المعروضة عند مشاركة الموقع
+# ogimage = " "
+
+# إعدادات SEO
+# seo = true
+# google_search_console = " "
+
+# إظهار أزرار القفز للIndiewebring
+indiewebring = false
+
+# للمصادقة في Mastodon
+# mastodon = "https://o3o.ca/@tinikov"
+
+# يُطلب اسم المستخدم فقط
+# github = "tinikov"
+
+# إظهار تاريخ التأسيس في التذييل
+establishdate = "2024"
+
+# رخصة المشاع الإبداعي BY-NC 4.0
+license = false
+
+# إظهار "Zola &laquo; re137" في التذييل
+show_zola_theme = true
+build_search_index = true
+
+# يمكنك إضافة عناصرك الخاصة في قائمة التنقل بالموقع
+re137_menu_links = [
+    { url = "$BASE_URL", name = "الصفحة الرئيسية 🏠" },
+    { url = "$BASE_URL/blog", name = "الكُنَّاشَةُ ✒️" },  # قلم الحبر القديم
+    { url = "$BASE_URL/categories", name = "التصنيفات 🗂️" },  # مجلد التصنيفات
+     { url = "$BASE_URL/rss.xml", name = "الموجز 📡" },
+]
+
