@@ -1,176 +1,24 @@
 {% import "macros.html" as macros %}
-<!DOCTYPE html>
-<html lang="{{ config.default_language }}">
-  {% block head %}
-    <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      {# العنوان والوصف وRSS #}
-      <title>
-        {% block title %}
-          {{ config.title }}
-        {% endblock title %}
-      </title>
-      <meta name="description"
-            content="{% block description %}{{ config.description }}{% endblock description %}" />
-      <link rel="alternate"
-            type="application/rss+xml"
-            title="RSS"
-            href="{{ get_url(path="rss.xml") | safe }}">
-      {# تحميل الأيقونة #}
-      <link rel="apple-touch-icon"
-            sizes="180x180"
-            href="{{ get_url(path="apple-touch-icon.png") | safe }}">
-      <link rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="{{ get_url(path="favicon-32x32.png") | safe }}">
-      <link rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="{{ get_url(path="favicon-16x16.png") | safe }}">
-      <link rel="manifest" href="{{ get_url(path="site.webmanifest") | safe }}">
-      <link rel="mask-icon" href="{{ get_url(path="safari-pinned-tab.svg") | safe }}" color="#5bbad5">
-      <meta name="msapplication-TileColor" content="#da532c">
-      <meta name="theme-color" content="#ffffff">
-      
-      {# روابط الخطوط العربية #}
-      <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Tajawal&display=swap" rel="stylesheet">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&display=swap" rel="stylesheet">
-      {# التوثيق (IndieWeb) #}
-      {% if config.extra.indiewebring %}<link rel="authorization_endpoint" href="https://indieauth.com/auth">{% endif %}
-      
-      {# التوثيق (Mastodon) #}
-      {% if config.extra.mastodon %}<link href="{{ config.extra.mastodon }}" rel="me">{% endif %}
-      
-      {# التوثيق (Github) #}
-      {% if config.extra.github %}<link href="{{ 'https://github.com/' ~ config.extra.github }}" rel="me">{% endif %}
-      
-      {# التوثيق (محرك البحث Google) #}
-      {% if config.extra.google_search_console %}
-        <meta name="google-site-verification" content="{{ config.extra.google_search_console }}" />
-      {% endif %}
-      
-      {# تحميل CSS #}
-      {% set cssdata = load_data(path="public/style.css", format="plain") -%}
-      <style>
-        {{ cssdata | safe }}
-      
-       
-      </style>
-      
-      {# بيانات ميتا #}
-      {% block seo -%}
-        <meta property="og:site_name" content="{{ config.title }}">
-        {% if config.author -%}<meta name="author" content="{{ config.author }}" />{%- endif %}
-        <meta property="og:title"
-              content="{% block ogtitle %}{{ config.title }}{% endblock ogtitle %}">
-        <meta property="og:description"
-              content="{% block ogdesc %}{{ config.description }}{% endblock ogdesc %}">
-        <meta property="og:url"
-              content="{% block ogurl %}{{ config.base_url | safe }}{% endblock ogurl %}">
-        {%- if config.extra.ogimage -%}
-          {% set ogimage = get_url(path=config.extra.ogimage) | safe %}
-        {%- else -%}
-          {% set ogimage = get_url(path="android-chrome-512x512.png") | safe %}
-        {%- endif -%}
-        <meta property="og:image"
-              content="{% block ogimage %}{{ ogimage }}{% endblock ogimage %}">
-        {% if page.date -%}
-          <meta property="og:type" content="article" />
-          <meta property="article:published_time"
-                content="{{ page.date | date(format="%+") }}" />
-        {%- endif %}
-        {% if page.higher -%}<link rel="prev" href="{{ page.higher.permalink | safe }}" />{%- endif %}
-        {% if page.lower -%}<link rel="next" href="{{ page.lower.permalink | safe }}" />{%- endif %}
-      {%- endblock seo -%}
-    </head>
-  {% endblock head %}
-  
-  <body>
-    <main id="main" role="main">
-      {# رأس الموقع #}
-      {% block header %}
-        <header role="banner">
-          <h1 class="header-site-title">
-            <a href="{{ config.base_url | safe }}" title="الصفحة الرئيسية">{{ config.title }}</a>
-          </h1>
-          <p class="header-site-description">{{ config.description }}</p>
-          
-          {# قائمة التنقل #}
-          {% if config.extra.re137_menu_links %}
-            <nav class="header-site-nav" role="navigation">
-              {% for item in config.extra.re137_menu_links %}
-                <a href="{{ item.url | replace(from="$BASE_URL", to=config.base_url) | safe }}">{{ item.name }}</a>
-                {% if not loop.last %}
-                  <span>·</span>
-                {% endif %}
-              {% endfor %}
-            </nav>
-          {% endif %}
-        </header>
-      {% endblock header %}
-     
-      <div class="content">
-        {% block content %}
-          {# تجميع المنشورات حسب السنة #}
-          {% set map = get_section(path="_index.md") | get(key="pages") | group_by(attribute="year") %}
-          {% set_global years = [] %}
-          
-          {# تحويل السنوات إلى مصفوفة #}
-          {% for year, ignored in map %}
-            {% set_global years = years | concat(with=year) %}
-          {% endfor %}
-          
-          {% for year in years | sort | reverse %}
-            {% set posts = map[year] %}
-            <h2 class="year-title">
-              <time>{{ year }}<sup>({{ posts | length }})</sup></time>
-            </h2>
-            <ul class="post-list">
-              {% for post in posts %}{{ macros::post_in_list(post=post) }}{% endfor %}
-            </ul>
-          {% endfor %}
-        {% endblock content %}
-      </div>
-      
-      <footer class="site-footer" role="contentinfo">
-        {% block footer %}
-          <div>
-            <div>
-              {% if config.extra.show_zola_theme %}
-                <a href="https://www.getzola.org">زولا</a> <span class="re137-aquo">-></span> <b><a href="https://github.com/tinikov/re137">re137</a></b>
-              {% endif %}
-            </div>
-            <div>
-              {% if config.extra.establishdate %}
-                {% if config.extra.establishdate == now() | date(format="%Y") %}
-                <span>عدله</span> <a href="https://on.misrataca.edu.ly/">{{ config.author }}</a> <span>عام</span> {{ now() | date(format="%Y") }}م  
-                {% else %}
-                  {{ config.extra.establishdate }}-{{ now() | date(format="%Y") }} <span>©</span> <a href="https://on.misrataca.edu.ly/">{{ config.author }}</a>
-                {% endif %}
-              {% else %}
-                <span>عدله</span> <a href="https://on.misrataca.edu.ly/">{{ config.author }}</a>
-              {% endif %}
-             
-              {% if config.extra.license %}
-                <span class="re137-aquo">«</span> <a href ```html
-                <a href="https://creativecommons.org/licenses/by-nc/4.0/">رخصة المشاع الإبداعي</a>
-              {% endif %}
-            </div>
-          
-          </div>
-          {% if config.extra.indiewebring %}
-            <div>
-              <a href="https://xn--sr8hvo.ws/previous">←</a> &nbsp; <a href="https://xn--sr8hvo.ws/">🕸💍</a> &nbsp; <a href="https://xn--sr8hvo.ws/next">→</a>
-            </div>
-          {% endif %}
-        {% endblock footer %}
-      </footer>
-    </main>
-    {% block after_main %}
-    {% endblock after_main %}
-  </body>
-</html>
+{% extends "index.html" %}
+<div class="content">
+  {% block content %}
+  {# تجميع المنشورات حسب السنة #}
+  {% set map = get_section(path="_index.md") | get(key="pages") | group_by(attribute="year") %}
+  {% set_global years = [] %}
+
+  {# تحويل السنوات إلى مصفوفة #}
+  {% for year, ignored in map %}
+  {% set_global years = years | concat(with=year) %}
+  {% endfor %}
+
+  {% for year in years | sort | reverse %}
+  {% set posts = map[year] %}
+  <h2 class="year-title">
+    <time>{{ year }}<sup>({{ posts | length }})</sup></time>
+  </h2>
+  <ul class="post-list">
+    {% for post in posts %}{{ macros::post_in_list(post=post) }}{% endfor %}
+  </ul>
+  {% endfor %}
+  {% endblock content %}
+</div>
