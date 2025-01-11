@@ -1,6 +1,6 @@
-base_url = "https://github.com/MohammedLanius/Qimtar.github.io"
+base_url = "Qimtar.github.io"
 title = "القِمَطْرُ"
-
+description="ليس بعلم ما حوى القمطر، مالعلم إلا ما حواه الصدر"
 default_language = "ar"
 compile_sass = true
 generate_feeds = true
@@ -21,7 +21,7 @@ anchors = "safe"
 year_template = "year.html"
 
 # الصورة المعروضة عند مشاركة الموقع
-# ogimage = " "
+# ogimage = "/apple-touch-icon.png"
 
 # إعدادات SEO
 # seo = true
