@@ -19,7 +19,7 @@ anchors = "safe"
 
 [extra]
 year_template = "year.html"
-
+commento_url = "https://cdn.commento.io"
 # الصورة المعروضة عند مشاركة الموقع
 # ogimage = "/apple-touch-icon.png"
 
