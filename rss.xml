@@ -2,19 +2,19 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>القِمَطْرُ</title>
-      <link>https://github.com/MohammedLanius/Qimtar.github.io</link>
+      <link>qimtar.github.io</link>
       <description></description>
       <generator>Zola</generator>
       <language>ar</language>
       <atom:link
-      href="https://github.com/MohammedLanius/Qimtar.github.io/rss.xml" rel="self" type="application/rss+xml" />
+      href="qimtar.github.io/rss.xml" rel="self" type="application/rss+xml" />
       <lastBuildDate>Tue, 18 Mar 2025 10:25:00 +0000</lastBuildDate> <item>
       <title>مفاخرة اللينيكس والويندوز</title>
       <pubDate>Tue, 18 Mar 2025 10:25:00 +0000</pubDate>
       <author>محمد</author>
-      <link>https://github.com/MohammedLanius/Qimtar.github.io/windowsVSlinux/</link>
-      <guid>https://github.com/MohammedLanius/Qimtar.github.io/windowsVSlinux/</guid>
-      <description xml:base="https://github.com/MohammedLanius/Qimtar.github.io/windowsVSlinux/">&lt;div style=&quot;text-align:center&quot;&gt;بسم الله الرحمن الرحيم&lt;&#x2F;div&gt;
+      <link>qimtar.github.io/windowsVSlinux/</link>
+      <guid>qimtar.github.io/windowsVSlinux/</guid>
+      <description xml:base="qimtar.github.io/windowsVSlinux/">&lt;div style=&quot;text-align:center&quot;&gt;بسم الله الرحمن الرحيم&lt;&#x2F;div&gt;
 &lt;p&gt;الحمدلله الذي رزقنا عقلاً لنُعمله ومَلَكَاتٍ لنشحذها وجعلنا خلفاءً في هذه الأرض والصلاة والسلام على رسوله الصادق الأمين&lt;&#x2F;p&gt;
 &lt;p&gt;أما بعد:
 فإن من أعجب أحاديث الزمان التي أردنا أن نوردها في كتابنا هذا مُفاخرة الويندوز ولينكس كتبناها على قَصَصِ مفاخرة الشتاء والصيف والبقر والغنم والماء والهواء فكانت حديثًا مُستظرفًا يُخفف عن المهموم وينتفض له العصفور ولا يخْلُ من فائدة.&lt;&#x2F;p&gt;
@@ -44,9 +44,9 @@
       <title>المُتخيل الصناعي</title>
       <pubDate>Mon, 16 Dec 2024 10:25:00 +0000</pubDate>
       <author>محمد</author>
-      <link>https://github.com/MohammedLanius/Qimtar.github.io/Ai/</link>
-      <guid>https://github.com/MohammedLanius/Qimtar.github.io/Ai/</guid>
-      <description xml:base="https://github.com/MohammedLanius/Qimtar.github.io/Ai/">&lt;p&gt;لطالما سعى الإنسان الغربي إلى تطويع الطبيعة وتسخيرها لأجله مُتجاوزًا حده مُتجاهلاً أنه فتح على نفسه أبوابًا تأتي منها الريح أولها الذكاء الصناعي وسُرَّ سرورًا شديدًا بما صنع فقد صنع مُلازمًا له يساعده في تصيير خياله واقعًا ولكن ماذا لو جعلناه مُتخيلاً أيضًا؟ لتتخيل لابد من عقل ولكن لنجرب ونرى فإن الناظر من بعيد سيحسب خلل الخوارزميات تخيلاً.&lt;&#x2F;p&gt;
+      <link>qimtar.github.io/Ai/</link>
+      <guid>qimtar.github.io/Ai/</guid>
+      <description xml:base="qimtar.github.io/Ai/">&lt;p&gt;لطالما سعى الإنسان الغربي إلى تطويع الطبيعة وتسخيرها لأجله مُتجاوزًا حده مُتجاهلاً أنه فتح على نفسه أبوابًا تأتي منها الريح أولها الذكاء الصناعي وسُرَّ سرورًا شديدًا بما صنع فقد صنع مُلازمًا له يساعده في تصيير خياله واقعًا ولكن ماذا لو جعلناه مُتخيلاً أيضًا؟ لتتخيل لابد من عقل ولكن لنجرب ونرى فإن الناظر من بعيد سيحسب خلل الخوارزميات تخيلاً.&lt;&#x2F;p&gt;
 &lt;p&gt;ذات مرة كتبت إحداهن اسم الممثل الشهير براندو في مُلقن الذكاء الصناعي وأضافت له 1-:: أي المُلقن العكسي negative prompt weight وهو الضد فكما ضد الحب اللامبالاة فإن ضد براندو كما يُهلوس الذكاء الصناعي هو Digita pntics كلمة بلا معنى لكن إن أضفنا لها مُلقنًا عكسيًا لنعيدها لصورة براندو فالعكس بالعكس سنرى عجوز شمطاء بشعر حني ووجنتين حمراوتين ما انفك الذكاء الصناعي يرسمها مهما أعادتْ -تلك- الكرة مرات ومرات.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;blog-images&#x2F;loap2.jpg&quot; alt=&quot;alt text&quot; &#x2F;&gt; &lt;img src=&quot;&#x2F;blog-images&#x2F;loap1.jpg&quot; alt=&quot;alt text&quot; &#x2F;&gt; &lt;img src=&quot;&#x2F;blog-images&#x2F;loap3.jpg&quot; alt=&quot;alt text&quot; &#x2F;&gt; &lt;img src=&quot;&#x2F;blog-images&#x2F;loap4.jpg&quot; alt=&quot;alt text&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;ماذا يعني هذا؟ من يدري&lt;&#x2F;p&gt;
@@ -55,9 +55,9 @@
       <title>ما القمطر؟</title>
       <pubDate>Fri, 06 Dec 2024 00:00:00 +0000</pubDate>
       <author>محمد</author>
-      <link>https://github.com/MohammedLanius/Qimtar.github.io/about/</link>
-      <guid>https://github.com/MohammedLanius/Qimtar.github.io/about/</guid>
-      <description xml:base="https://github.com/MohammedLanius/Qimtar.github.io/about/">&lt;blockquote&gt;
+      <link>qimtar.github.io/about/</link>
+      <guid>qimtar.github.io/about/</guid>
+      <description xml:base="qimtar.github.io/about/">&lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;shamela.ws&#x2F;book&#x2F;23193&#x2F;2729&quot;&gt;&lt;strong&gt;مختار الصحاح [زين الدين الرازي]&lt;&#x2F;strong&gt; &lt;&#x2F;a&gt;&lt;br&gt;
 (الْقِمَطْرُ) بِوَزْنِ الْهِزَبْرِ وَ (الْقِمَطْرَةُ) مَا تُصَانُ فِيهِ الْكُتُبُ. وَلَا يُقَالُ بِالتَّشْدِيدِ &lt;br&gt; وَيُنْشَدُ:&lt;&#x2F;p&gt;
 &lt;p class=&quot;poem&quot;&gt;لَيْسَ بِعِلْمٍ مَا يَعِي الْقِمَطْرُ ... مَا الْعِلْمُ إِلَّا مَا وَعَاهُ الصَّدْرُ&lt;p&gt;
