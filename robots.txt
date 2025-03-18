@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 Allow: /
-Sitemap: qimatr.github.io/sitemap.xml
+Sitemap: https://qimatr.github.io/sitemap.xml
