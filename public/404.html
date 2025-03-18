@@ -7,8 +7,8 @@
       
       <title>
         
-          القِمَطْرُ
-        
+  页面走丢了 (･_･;
+
       </title>
       <meta name="description"
             content="" />
@@ -37,7 +37,9 @@
       <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Tajawal&display=swap" rel="stylesheet">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
       
       
       
@@ -77,10 +79,10 @@
       
       
         <header role="banner">
-          <h1 class="header-site-title">
-            <a href="https://github.com/MohammedLanius/Qimtar.github.io" title="الصفحة الرئيسية">القِمَطْرُ</a>
-          </h1>
-          <p class="header-site-description"></p>
+          <div class="header-site-title">
+            <h1><a href="https://github.com/MohammedLanius/Qimtar.github.io" title="الصفحة الرئيسية">القِمَطْرُ</a></h1>
+            <a href="x.com/sei9inomikata" class="twitter"><img src="https://pbs.twimg.com/profile_images/1861300512211025920/bOSnynuE_400x400.jpg" alt="حسابي في التويتر"></a>
+          </div>
           
           
           
@@ -88,17 +90,14 @@
               
                 <a href="https://github.com/MohammedLanius/Qimtar.github.io">الصفحة الرئيسية 🏠</a>
                 
-                  <span>·</span>
                 
               
                 <a href="https://github.com/MohammedLanius/Qimtar.github.io/blog">الكُنَّاشَةُ ✒️</a>
                 
-                  <span>·</span>
                 
               
                 <a href="https://github.com/MohammedLanius/Qimtar.github.io/categories">التصنيفات 🗂️</a>
                 
-                  <span>·</span>
                 
               
                 <a href="https://github.com/MohammedLanius/Qimtar.github.io/rss.xml">الموجز 📡</a>
@@ -108,49 +107,19 @@
           
         </header>
       
-     
+
       <div class="content">
+ 
         
-          
-          
-          
-          
-          
-          
-            
-          
-            
-          
-          
-          
-            
-            <h2 class="year-title">
-              <time>2025<sup>(1)</sup></time>
-            </h2>
-            <ul class="post-list">
-              
-  <li>
-    <a href="https://github.com/MohammedLanius/Qimtar.github.io/windowsVSlinux/">مفاخرة اللينيكس والويندوز</a>
-    <time datetime=" 2025-03-18T10:25:00+00:00">2025&#x2F;03&#x2F;18</time>
-  </li>
+  <h1 class="page-title">404：页面走丢了 (･_･;</h1>
+  <img id="img-404" src="/kuma-and-koroke.png" alt="kuma and koroke">
+  <p>
+    这个页面被遗忘在了互联网的边缘……<a href="https://github.com/MohammedLanius/Qimtar.github.io/">回到主页</a>看看其他内容吧！
+  </p>
 
-            </ul>
-          
-            
-            <h2 class="year-title">
-              <time>2024<sup>(1)</sup></time>
-            </h2>
-            <ul class="post-list">
-              
-  <li>
-    <a href="https://github.com/MohammedLanius/Qimtar.github.io/Ai/">المُتخيل الصناعي</a>
-    <time datetime=" 2024-12-16T10:25:00+00:00">2024&#x2F;12&#x2F;16</time>
-  </li>
-
-            </ul>
-          
-        
       </div>
+   
+      
       
       <footer class="site-footer" role="contentinfo">
         
@@ -176,6 +145,28 @@
       </footer>
     </main>
     
+    
+    <script>
+      async function search(query) {
+        const response = await fetch('/search.json');
+        const data = await response.json();
+        const results = data.filter(page =>
+          page.title.toLowerCase().includes(query.toLowerCase()) ||
+          page.content.toLowerCase().includes(query.toLowerCase())
+        );
+        displayResults(results);
+      }
+    
+      function displayResults(results) {
+        const resultsContainer = document.getElementById('search-results');
+        resultsContainer.innerHTML = results.map(result => `
+          <div>
+            <h3><a href="${result.url}">${result.title}</a></h3>
+            <p>${result.summary}</p>
+          </div>
+        `).join('');
+      }
+    </script>
     
   </body>
 </html>
